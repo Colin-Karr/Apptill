@@ -3,4 +3,6 @@ This is an information app to practise node.js for backend server development. I
 
 Note that typically the node_modules folder is not uploaded on Github.  Thus, if one downloads an app from Github without the node_modules folder, an err not finding the packages will be created. To solve this issue, run "npm install" which will cause node to look in the json package for all the dependencies and download them.
 
+Express is a framework that makes writing server logic code much easier. Raw node can be used but express is much faster.
+
 
