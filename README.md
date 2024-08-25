@@ -5,4 +5,6 @@ Note that typically the node_modules folder is not uploaded on Github.  Thus, if
 
 Express is a framework that makes writing server logic code much easier. Raw node can be used but express is much faster.
 
+Ejs is a library that facilitates the use of dynamic data into static html files. It is accommodated well by Express which is another advantage for using the Express framework.
+
 
