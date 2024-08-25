@@ -1,0 +1,19 @@
+{
+  "name": "apptill",
+  "version": "1.0.0",
+  "description": "info app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colin-Karr/Apptill.git"
+  },
+  "author": "Colin Karr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Colin-Karr/Apptill/issues"
+  },
+  "homepage": "https://github.com/Colin-Karr/Apptill#readme"
+}
