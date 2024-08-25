@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Colin-Karr/Apptill/issues"
   },
-  "homepage": "https://github.com/Colin-Karr/Apptill#readme"
+  "homepage": "https://github.com/Colin-Karr/Apptill#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
