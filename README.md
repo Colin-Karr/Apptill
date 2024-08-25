@@ -8,3 +8,4 @@ Express is a framework that makes writing server logic code much easier. Raw nod
 Ejs is a library that facilitates the use of dynamic data into static html files. It is accommodated well by Express which is another advantage for using the Express framework.
 
 
+Mongoose is an Object Document Mapping (ODM) library that makes it easier to connect to and communicate with the Mongo database by wrapping the standard Mongo db API. It is intalled by this command: "npm install mongoose"
