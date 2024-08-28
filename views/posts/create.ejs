@@ -2,21 +2,31 @@
 <html lang="en">
   <%- include('../partials/head.ejs') %>
   <body>
-    <%- include('../partials/nav.ejs') %>
-
-    <div>
-        <h1>Create Posts</h1>
+    <div class="heading-container">
+      <h1>Create Posts</h1>
     </div>
+
+    <%- include('../partials/nav.ejs') %>
 
     <div class="post-form">
       <form action="/posts" method="post">
-        <label for="title">Post Title</label>
-        <input type="text" name="title" id="title" required />
-        <label for="snippet">Post Snippet</label>
-        <input type="text" id="snippet" name="snippet" required />
-        <label for="body">Post Body</label>
-        <textarea id="body" name="body" required></textarea>
+        <div class="form-elements">
+          <label for="title">Post Title</label>
+          <input type="text" name="title" id="title" required />
+        </div>
+
+        <div class="form-elements">
+          <label for="snippet">Post Snippet</label>
+          <input type="text" id="snippet" name="snippet" required />
+        </div>
+
+        <div class="form-elements">
+          <label for="body">Post Body</label>
+          <textarea id="body" name="body" required></textarea>
+        </div>
+        <div class="btn-container">
         <button class="create-post-button">Submit</button>
+        </div>
       </form>
     </div>
 
