@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Place head in partials
+  Use 'include' to reference it-->
+  <%-include('../partials/head')%>
+
+  <body>
+    <div class="heading-container"><h1>Homepage</h1></div>
+    <!--Place nav in partials
+  Use 'include' to reference it-->
+    <%-include('../partials/nav')%>
+
+    <!--Homepage Content-->
+    <div class="homepage-content">
+      <%if(posts.length > 0){%><% posts.forEach(post =>{%>
+      <a class="single-post" href="posts/<%= post._id %>"
+        ><h3 class="post-title"><%= post.title %></h3>
+        <p class="post-body"><%= post.snippet %></p>
+      </a>
+
+      <%})%> <%}else{%>
+      <h3 class="post-title"><%= 'There are no posts to display.' %></h3>
+      <%}%>
+    </div>
+
+    <!--Place footer in partials
+  Use 'include' to reference it-->
+    <%-include('../partials/footer')%>
+  </body>
+</html>

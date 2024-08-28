@@ -2,7 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-//const blogRoutes = require("./routes/blogRoutes");
+const postRoutes = require("./routes/postRoutes");
 const { result } = require("lodash");
 
 //Create an instance of Express
@@ -15,11 +15,11 @@ const app = express();
 
 //Store db link in variable dbURI
 const dbURI =
-  "mongodb+srv://col:success7@nodepractice.p2cis.mongodb.net/?retryWrites=true&w=majority&appName=nodePractice";
+  "mongodb+srv://col:success7@nodepractice.p2cis.mongodb.net/Info?retryWrites=true&w=majority&appName=nodePractice";
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => console.log("Connected to database"), app.listen(4000))
+  .then((result) => console.log("Connected to database"), app.listen(3000))
   .catch((err) => console.log(err));
 
 //Register ejs view engine
@@ -40,7 +40,28 @@ app.use(morgan("dev"));
 //Send pages that were requested
 
 //Basic routes
-//Homepage: redirect to blog page
+
+//Homepage: redirect to post page
 app.get("/", (req, res) => {
-  res.redirect("/blogs");
+  res.redirect("/posts");
+});
+
+//About page
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
+});
+
+//Contacts page
+app.get("/contacts", (req, res) => {
+  res.render("contacts", { title: "Contacts" });
+});
+
+//post routes
+//Scope '/posts' which can now be removed in postRoutes
+//Middleware: "use"
+app.use("/posts", postRoutes);
+
+//404 page (Middleware "use")
+app.use((req, res) => {
+  res.status(404).render("404", { title: "404" });
 });

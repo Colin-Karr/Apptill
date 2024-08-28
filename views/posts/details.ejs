@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="details-content">
+      <h2><%= post.title %></h2>
+
+      <div class="content">
+        <p><%= post.body %></p>
+      </div>
+
+      <a class="delete" data-doc="<%= post._id %>"
+        ><img src="/trashCan.svg" alt="delete icon"
+      /></a>
+    </div>
+
+    <script>
+      //Note that this code will run in
+      //the front end
+      //Reference delete tag
+      const trashCan = document.querySelector("a.delete");
+
+      //Add event listener to delete variable
+      trashCan.addEventListener("click", (e) => {
+        const endpoint = `/posts/${trashCan.dataset.doc}`;
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          //redirect from the front end
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => console.log(err));
+      });
+    </script>
+
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+textarea {
+    height: 120px;
+  }
+  .create-post-button {
+    margin-top: 20px;
+    background: crimson;
+    color: white;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
